@@ -34,15 +34,21 @@ const ChatPage: React.FC = () => {
         body: JSON.stringify({ prompt: input }),
       });
       const data = await res.json();
+      console.log('API response:', data);
+      // Xử lý cả mảng hoặc object
+      const botContent = Array.isArray(data)
+        ? data.map((item: any) => item.output).join('\n')
+        : data?.output;
 
       setMessages((prev) => [
         ...prev,
         {
           role: 'bot',
-          content: data?.[0]?.output || '🤖 Xin lỗi, tôi chưa thể trả lời lúc này.',
+          content: botContent || '🤖 Xin lỗi, tôi chưa thể trả lời lúc này.',
         },
       ]);
-    } catch {
+    } catch (err) {
+      console.error(err);
       setMessages((prev) => [
         ...prev,
         { role: 'bot', content: '⚠️ Có lỗi xảy ra, vui lòng thử lại.' },

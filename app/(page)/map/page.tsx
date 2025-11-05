@@ -94,6 +94,21 @@ export default function HomePage() {
             <span style="color:#facc15;font-weight:600;">💰 ${p.price} triệu/tháng</span>
             <span style="font-size:12px;color:#9ca3af;">${p.area || '-'} m²</span>
           </div>
+          <!-- ⭐ Đánh giá từ người thuê -->
+          <div style="display:flex;align-items:center;margin-bottom:6px;font-size:13px;color:#facc15;">
+            ${p.star ? (() => {
+              const fullStars = Math.floor(p.star);
+              const halfStar = p.star - fullStars >= 0.5 ? 1 : 0;
+              const emptyStars = 5 - fullStars - halfStar;
+              return (
+                'Đánh giá: ' +
+                '★'.repeat(fullStars) +
+                (halfStar ? '☆' : '') +
+                '✩'.repeat(emptyStars)
+              );
+            })() : 'Chưa có đánh giá'}
+          </div>
+
           <div style="display:flex;justify-content:space-between;">
             <span style="font-size:12px;color:#9ca3af;">Lượt thuê trước: <b style="color:white">${p.pre ?? 0}</b></span>
             <button id="${safeId}" style="
