@@ -192,7 +192,7 @@ export default function ComparePage() {
 
           {/* AI advice */}
           <div className="bg-gradient-to-r from-blue-900 to-indigo-900 rounded-2xl border-l-4 border-l-blue-400 p-6 text-center shadow-lg">
-            <h3 className="text-2xl font-bold mb-3 text-blue-300">🤖 Kết luận từ AI</h3>
+            <h3 className="text-2xl font-bold mb-3 text-blue-300">🤖 Lời khuyên từ AI</h3>
             <pre className="text-gray-100 text-lg leading-relaxed whitespace-pre-line">
               {comparisonResult.ai_advice}
             </pre>

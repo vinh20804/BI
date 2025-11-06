@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Map, MessageCircle, SlidersHorizontal, LayoutDashboard, Shuffle, Video, Menu, X, Home } from 'lucide-react';
+import { Map, MessageCircle, SlidersHorizontal, LayoutDashboard, Shuffle, Video, Menu, X, Home,MapPin } from 'lucide-react';
 
 // Dữ liệu các liên kết
 const navItems = [
@@ -13,6 +13,8 @@ const navItems = [
   { name: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
   { name: 'Compare', href: '/compare', icon: Shuffle },
   { name: 'FindVD', href: '/findvd', icon: Video },
+  { name: 'Direct', href: '/direct', icon: MapPin },
+  // { name: 'Sign up', href: '/signup', icon: MapPin },
 ];
 
 // Component Logo (Inline SVG)
